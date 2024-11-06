@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/journey-hub/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/journey-hub/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/journey-hub",
+  "projects": {
+    "journey-hub": {
+      "type": "application",
+      "root": "apps/journey-hub",
+      "entryFile": "main",
+      "sourceRoot": "apps/journey-hub/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/journey-hub/tsconfig.app.json"
+      }
+    },
+    "journey-hub-batch": {
+      "type": "application",
+      "root": "apps/journey-hub-batch",
+      "entryFile": "main",
+      "sourceRoot": "apps/journey-hub-batch/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/journey-hub-batch/tsconfig.app.json"
+      }
+    }
   }
 }
