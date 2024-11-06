@@ -109,6 +109,6 @@ const tourSchema = new Schema(
 	{ timestamps: true, collection: 'tours' },
 );
 
-tourSchema.index({ propertyType: 1, propertyLocation: 1, propertyTitle: 1, propertyPrice: 1 }, { unique: true });
+tourSchema.index({ tourType: 1, tourLocation: 1, tourTitle: 1, tourPrice: 1 }, { unique: true });
 
 export default tourSchema;
